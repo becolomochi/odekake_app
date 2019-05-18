@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>日にち:</strong>
   <%= @place.date %>
 </p>
 
 <p>
-  <strong>Weather:</strong>
+  <strong>天気:</strong>
   <%= @place.weather %>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>出かけた場所:</strong>
   <%= @place.place %>
 </p>
 
 <p>
-  <strong>Memo:</strong>
+  <strong>メモ:</strong>
   <%= @place.memo %>
 </p>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+<%= link_to '編集する', edit_place_path(@place) %> |
+<%= link_to '一覧に戻る', places_path %>
