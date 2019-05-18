@@ -2,32 +2,34 @@
 
 <h1>お出かけアプリ</h1>
 
-<table>
+<div class="add-link-box">
+<%= link_to '新しく登録する', new_place_path %>
+</div>
+
+<table class="main-table">
   <thead>
-    <tr>
+    <tr class="small-text">
       <th>日にち</th>
       <th>天気</th>
       <th>出かけた場所</th>
       <th>メモ</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @places.each do |place| %>
       <tr>
-        <td><%= place.date %></td>
-        <td><%= place.weather %></td>
-        <td><%= place.place %></td>
+        <td class="small-text align-center"><%= place.date %></td>
+        <td class="align-center"><%= place.weather %></td>
+        <td class="bold-text align-center"><%= place.place %></td>
         <td><%= place.memo %></td>
-        <td><%= link_to '詳細を見る', place %></td>
-        <td><%= link_to '編集する', edit_place_path(place) %></td>
-        <td><%= link_to '削除する', place, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <td class="small-text align-center">
+          <span class="main-table-link"><%= link_to '詳細を見る', place %></span>
+          <span class="main-table-link"><%= link_to '編集する', edit_place_path(place) %></span>
+          <span class="main-table-link"><%= link_to '削除する', place, method: :delete, data: { confirm: '本当に削除しますか？' } %></span>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to '新しく登録する', new_place_path %>
