@@ -13,6 +13,7 @@
       <th>天気</th>
       <th>出かけた場所</th>
       <th>メモ</th>
+      <th>画像</th>
       <th></th>
     </tr>
   </thead>
@@ -24,10 +25,11 @@
         <td class="align-center"><%= place.weather %></td>
         <td class="bold-text align-center"><%= place.place %></td>
         <td><%= place.memo %></td>
-        <td class="small-text align-center">
-          <span class="main-table-link"><%= link_to '詳細を見る', place %></span>
-          <span class="main-table-link"><%= link_to '編集する', edit_place_path(place) %></span>
-          <span class="main-table-link"><%= link_to '削除する', place, method: :delete, data: { confirm: '本当に削除しますか？' } %></span>
+        <td><%= image_tag(place.picture_url) if place.picture.present? %></td>
+        <td class="small-text align-center width-small">
+          <span class="main-table-link"><%= link_to '詳細', place %></span><br>
+          <span class="main-table-link"><%= link_to '編集', edit_place_path(place) %></span><br>
+          <span class="main-table-link"><%= link_to '削除', place, method: :delete, data: { confirm: '本当に削除しますか？' } %></span>
         </td>
       </tr>
     <% end %>

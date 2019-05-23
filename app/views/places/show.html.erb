@@ -20,5 +20,10 @@
   <%= @place.memo %>
 </p>
 
+<p>
+  <strong>画像:</strong>
+  <%= image_tag(@place.picture_url) if @place.picture.present? %>
+</p>
+
 <%= link_to '編集する', edit_place_path(@place) %> |
 <%= link_to '一覧に戻る', places_path %>
