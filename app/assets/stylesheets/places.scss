@@ -1,21 +1,6 @@
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-main {
-  display: block;
-}
-html {
-  -webkit-text-size-adjust: 100%; /* iOS */
-}
+@charset "utf-8";
+@import "_ress";
+
 html {
   font-size: 62.5%; /* 1rem = 10px */
   line-height: 1.5;
@@ -27,6 +12,17 @@ body {
   color: #444;
   margin: 40px 0;
 }
+
+input,
+textarea,
+select {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
 .small-text {
   font-size: 1.4rem;
 }
