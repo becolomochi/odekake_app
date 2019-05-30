@@ -68,6 +68,7 @@ input[type="submit"] {
 label {
   font-weight: bold;
   font-size: 1.4rem;
+  margin-bottom: 2px;
 }
 input[type="file"] {
   font-size: 1.3rem;
@@ -181,6 +182,9 @@ h1 {
   .width-small {
     width: 3em;
     vertical-align: top;
+  }
+  img {
+    max-width: 200px;
   }
 }
 .main-table-link {
