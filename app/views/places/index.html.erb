@@ -24,7 +24,7 @@
         <td class="small-text align-center"><%= place.date %></td>
         <td class="align-center"><%= place.weather %></td>
         <td class="bold-text align-center"><%= place.place %></td>
-        <td><%= place.memo %></td>
+        <td><%= simple_format(place.memo) %></td>
         <td><%= image_tag(place.picture_url) if place.picture.present? %></td>
         <td class="small-text align-center width-small">
           <span class="main-table-link"><%= link_to '詳細', place %></span><br>
