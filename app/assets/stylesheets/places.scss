@@ -15,12 +15,59 @@ body {
 
 input,
 textarea,
-select {
-  border: 1px solid #ccc;
-  padding: 8px;
+select,
+button {
   font-size: 1.6rem;
   line-height: 1.5;
+  outline: none;
+  &:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+}
+input:not([type="file"]),
+textarea,
+select {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 6px 12px;
   border-radius: 4px;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+  &:focus {
+    border-color: #666;
+    background-color: #f7f7f7;
+  }
+}
+select,
+input[type="file"] {
+  &:hover {
+    cursor: pointer;
+  }
+}
+select {
+  padding-right: 24px;
+  background: url(/select.svg) no-repeat right;
+}
+input.wide,
+textarea {
+  max-width: 100%;
+  width: 500px;
+}
+button,
+input[type="button"],
+input[type="submit"] {
+  background-color: #f4ac03;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.1);
+  &:hover {
+    background-color: #ff8400;
+  }
+}
+label {
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 .small-text {
@@ -64,10 +111,13 @@ a {
   }
 }
 
+form {
+  margin: 40px 0;
+}
 div {
   &.field,
   &.actions {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
