@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>日にち:</strong>
+<div class="show-item">
+  <h3 class="title">日にち:</h3>
   <%= @place.date %>
-</p>
+</div>
 
-<p>
-  <strong>天気:</strong>
+<div class="show-item">
+  <h3 class="title">天気:</h3>
   <%= @place.weather %>
-</p>
+</div>
 
-<p>
-  <strong>出かけた場所:</strong>
+<div class="show-item">
+  <h3 class="title">出かけた場所:</h3>
   <%= @place.place %>
-</p>
+</div>
 
-<p>
-  <strong>メモ:</strong>
-  <%= @place.memo %>
-</p>
+<div class="show-item">
+  <h3 class="title">メモ:</h3>
+  <%= simple_format(@place.memo) %>
+</div>
 
-<p>
-  <strong>画像:</strong>
+<div class="show-item">
+  <h3 class="title">画像:</h3>
   <%= image_tag(@place.picture_url) if @place.picture.present? %>
-</p>
+</div>
 
 <%= link_to '編集する', edit_place_path(@place) %> |
 <%= link_to '一覧に戻る', places_path %>
