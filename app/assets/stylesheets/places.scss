@@ -69,6 +69,11 @@ label {
   font-weight: bold;
   font-size: 1.4rem;
 }
+input[type="file"] {
+  font-size: 1.3rem;
+  width: 100%;
+  max-width: 300px;
+}
 
 .small-text {
   font-size: 1.4rem;
