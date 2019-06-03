@@ -6,32 +6,37 @@
 <%= link_to '新しく登録する', new_place_path %>
 </div>
 
-<table class="main-table">
-  <thead>
-    <tr class="small-text">
-      <th>日にち</th>
-      <th>天気</th>
-      <th>出かけた場所</th>
-      <th>メモ</th>
-      <th>画像</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td class="small-text align-center"><%= place.date %></td>
-        <td class="align-center"><%= place.weather %></td>
-        <td class="bold-text align-center"><%= place.place %></td>
-        <td><%= simple_format(place.memo) %></td>
-        <td><%= image_tag(place.picture_url) if place.picture.present? %></td>
-        <td class="small-text align-center width-small">
-          <span class="main-table-link"><%= link_to '詳細', place %></span><br>
-          <span class="main-table-link"><%= link_to '編集', edit_place_path(place) %></span><br>
-          <span class="main-table-link"><%= link_to '削除', place, method: :delete, data: { confirm: '本当に削除しますか？' } %></span>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @places.each do |place| %>
+<article class="article-box">
+<div class="article-header">
+  <div class="article-date-box">
+    <span class="article-date"><%= place.date %></span>
+  </div>
+  <div class="article-weather-box">
+    <span class="article-weather"><%= place.weather %></span>
+  </div>
+</div>
+<div class="article-main">
+  <div class="article-place-box">
+    <span class="article-place"><%= place.place %></span>
+  </div>
+  <div class="article-memo-box">
+    <div class="article-memo">
+      <%= simple_format(place.memo) %>
+    </div>
+    <%= image_tag(place.picture_url) if place.picture.present? %>
+  </div>
+</div>
+<div class="article-footer">
+  <div class="article-links">
+    <div class="article-left-link">
+      <span class="article-link"><%= link_to '詳細を見る', place %></span>
+      <span class="article-link"><%= link_to '編集する', edit_place_path(place) %></span>
+    </div>
+    <div class="article-right-link">
+      <span class="article-link"><%= link_to '削除', place, method: :delete, data: { confirm: '本当に削除しますか？' }, :class =>'delete-link' %></span>
+    </div>
+  </div>
+</div>
+</article>
+<% end %>
